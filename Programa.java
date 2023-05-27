@@ -33,9 +33,10 @@ public class Programa {
         mensalidade = 85.0;
       } else if (idade <= 50) {
         mensalidade = 65.0;
-      } else {
+      } else  if (idade >= 50 && idade <= 120){
         mensalidade = 50.0;
       }
+      else if (idade <= 0 || idade >= 125) { System.out.println("Idade invalida");}
     } else {
       System.out.println("Sexo inválido.");
       mensalidade = 0.0;
