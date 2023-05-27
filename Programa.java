@@ -5,25 +5,23 @@ public class Programa {
 		Scanner scanner = new Scanner(System.in);
 		ValidacaoIdadeHomem validacaoIdadeHomem = new ValidacaoIdadeHomem();
 		ValidacaoIdadeMulher validacaoIdadeMulher = new ValidacaoIdadeMulher();
+		ValidacaoGenero validacaoGenero = new ValidacaoGenero();
+		
+		String genero, mensalidade;
 		
 		
-		validacaoIdadeHomem.idadeValidacao();
-		validacaoIdadeMulher.idadeValidacao();
-
-		System.out.print("Informe o sexo do cliente (M/F): ");
-		String sexo = scanner.next();
-
+		genero = validacaoGenero.genero();
 		
-
-		if (sexo.equalsIgnoreCase("M")) {
-			
-			
-		} else if (sexo.equalsIgnoreCase("F")) {
-			
-		} else {
-			System.out.println("Sexo inválido.");
-			mensalidade = 0.0;
+		if(genero == "H") {
+			mensalidade = validacaoIdadeHomem.idadeValidacao();
 		}
+		else if(genero == "M") {
+			mensalidade = validacaoIdadeMulher.idadeValidacao();
+		}
+		else {
+			mensalidade = "invalido";
+		}
+		
 
 		System.out.println("Valor da mensalidade: R$" + mensalidade);
 
